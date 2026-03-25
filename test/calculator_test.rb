@@ -2,13 +2,15 @@ require "minitest/autorun"
 require "calculator"
 
 class CalculatorTest < Minitest::Test
+  def setup
+    @calc = Calculator.new
+  end
+
   def test_add
-    calc = Calculator.new
-    assert_equal 5, calc.add(2, 3)
+    assert_equal 5, @calc.add(2, 3)
   end
 
   def test_add_negative
-    calc = Calculator.new
-    assert_equal(-1, calc.add(2, -3))
+    assert_equal(-1, @calc.add(2, -3))
   end
 end
